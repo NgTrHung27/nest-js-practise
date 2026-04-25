@@ -1,13 +1,12 @@
-// src/isolate-test/isolate-test.controller.ts
 import { Controller, Get } from '@nestjs/common';
 
 @Controller('api/isolate-test') // Đường dẫn rõ ràng cho việc test Isolate
 export class IsolateTestController {
   
-  @Get('heavy-payload')
+  @Get('heavy-payload') // http://localhost:3000/api/isolate-test/heavy-payload 
   getHeavyData() {
     const totalRecords = 10000;
-   const items: any[] = [];
+    const items: any[] = [];
 
     // Sinh dữ liệu mẫu đủ nặng để làm lag Main Thread Flutter
     for (let i = 1; i <= totalRecords; i++) {
